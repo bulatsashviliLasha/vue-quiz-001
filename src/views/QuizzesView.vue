@@ -30,5 +30,6 @@ watch(search, () => {
   display: flex;
   flex-wrap: wrap;
   margin-top: 40px;
+  justify-content: center;
 }
 </style>
