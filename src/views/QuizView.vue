@@ -28,7 +28,7 @@ const onOptionSelected = (isCorrect) => {
     questionStatus.numberOfCorrectAnswers++;
   }
 
-  if(questionStatus.quantity - 1 === questionStatus.currentQuestionIndex) {
+  if (questionStatus.quantity - 1 === questionStatus.currentQuestionIndex) {
     showResults.value = true;
   }
 
@@ -48,10 +48,7 @@ const onOptionSelected = (isCorrect) => {
         @selectOption="onOptionSelected"
         :question="quiz.questions[questionStatus.currentQuestionIndex]"
       />
-      <ResultComponent
-          v-else
-          :questionStatus="questionStatus"
-      />
+      <ResultComponent v-else :questionStatus="questionStatus" />
     </div>
   </div>
 </template>

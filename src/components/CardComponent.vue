@@ -11,9 +11,8 @@ const props = defineProps({
 });
 
 const navigateToQuiz = () => {
-  router.push(`/quiz/${props.quiz.id}`)
-}
-
+  router.push(`/quiz/${props.quiz.id}`);
+};
 </script>
 
 <template>

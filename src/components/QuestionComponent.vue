@@ -3,8 +3,8 @@ const props = defineProps(["question"]);
 const emit = defineEmits(["selectOption"]);
 
 const emitSelectedOption = (isCorrect) => {
-  emit("selectOption", isCorrect)
-}
+  emit("selectOption", isCorrect);
+};
 </script>
 
 <template>
@@ -13,10 +13,10 @@ const emitSelectedOption = (isCorrect) => {
   </section>
   <section class="options-container">
     <div
-        v-for="option in question?.options"
-        :key="option.id"
-        class="option"
-        @click="emitSelectedOption(option.isCorrect)"
+      v-for="option in question?.options"
+      :key="option.id"
+      class="option"
+      @click="emitSelectedOption(option.isCorrect)"
     >
       <div class="option-label">{{ option?.label }}</div>
       <div class="option-value">

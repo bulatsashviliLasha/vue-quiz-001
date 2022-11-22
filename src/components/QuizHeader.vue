@@ -1,14 +1,18 @@
 <template>
   <header>
-    <h4>Question {{props.questionStatus.currentQuestionIndex}}/{{props.questionStatus.quantity}}</h4>
+    <h4>
+      Question {{ props.questionStatus.currentQuestionIndex }}/{{
+        props.questionStatus.quantity
+      }}
+    </h4>
     <div class="bar">
-      <div class="completion" :style="{width: barPercentage}"></div>
+      <div class="completion" :style="{ width: barPercentage }"></div>
     </div>
   </header>
 </template>
 
 <script setup>
-const props = defineProps(['questionStatus','barPercentage']);
+const props = defineProps(["questionStatus", "barPercentage"]);
 </script>
 
 <style scoped>
