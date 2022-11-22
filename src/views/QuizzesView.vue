@@ -34,43 +34,44 @@ const enter = (el) => {
 <template>
   <div>
     <header>
-      <h1><img @click="$router.push('/')" src="../assets/Q.png" alt="Logo"></h1>
+      <h1>
+        <img @click="$router.push('/')" src="../assets/Q.png" alt="Logo" />
+      </h1>
       <div>
         <input v-model.trim="search" type="text" placeholder="Search..." />
       </div>
     </header>
     <div class="options-container">
-
-        <TransitionGroup
-            appear
-            @before-enter="beforeEnter"
-            @after-enter="afterEnter"
-            @enter="enter"
-        >
-          <CardComponent
-              v-for="(quiz, index) in quizes"
-              :key="quiz.id"
-              :quiz="quiz"
-              :data-index="(index + 1) / 1.9"
-          />
-        </TransitionGroup>
+      <TransitionGroup
+        appear
+        @before-enter="beforeEnter"
+        @after-enter="afterEnter"
+        @enter="enter"
+      >
+        <CardComponent
+          v-for="(quiz, index) in quizes"
+          :key="quiz.id"
+          :quiz="quiz"
+          :data-index="(index + 1) / 1.9"
+        />
+      </TransitionGroup>
 
       <section v-if="!quizes.length">
         <div>No Quiz found</div>
-        <div @click="search = '' ">Back to Quizzes</div>
+        <div @click="search = ''">Back to Quizzes</div>
       </section>
     </div>
   </div>
 </template>
 
 <style scoped>
-header h1 img{
+header h1 img {
   width: 75px;
   height: 75px;
   margin-left: 5px;
   cursor: pointer;
 }
-header div{
+header div {
   display: flex;
   justify-content: center;
 }
@@ -80,12 +81,12 @@ header div{
   margin-top: 40px;
   justify-content: center;
 }
-section{
+section {
   text-align: center;
   font-size: 30px;
   margin-top: 50px;
 }
-section div:last-child{
+section div:last-child {
   cursor: pointer;
   font-weight: bold;
   font-size: 16px;
